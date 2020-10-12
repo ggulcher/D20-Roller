@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/black"
+    android:background="@color/backgroundGrey"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/rollResult"
         android:layout_width="217dp"
         android:layout_height="219dp"
-        android:background="@android:color/white"
+        android:background="@drawable/black_border"
         android:padding="8dp"
         android:text="0"
         android:textAlignment="center"
@@ -30,6 +30,7 @@
         android:layout_height="105dp"
         android:layout_weight="1"
         android:adjustViewBounds="true"
+        android:background="@drawable/transparent_background"
         android:contentDescription="@string/d4"
         android:onClick="onClick"
         android:padding="0dp"
@@ -40,7 +41,7 @@
         app:layout_constraintStart_toEndOf="@+id/d6"
         app:layout_constraintTop_toBottomOf="@+id/d12"
         app:layout_constraintVertical_bias="0.175"
-        app:srcCompat="@drawable/d4" />
+        app:srcCompat="@drawable/diced4" />
 
     <ImageButton
         android:id="@+id/d6"
@@ -52,12 +53,13 @@
         android:onClick="onClick"
         android:padding="0dp"
         android:scaleType="fitCenter"
+        android:background="@drawable/transparent_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/d20"
         app:layout_constraintVertical_bias="0.175"
-        app:srcCompat="@drawable/d6" />
+        app:srcCompat="@drawable/diced6" />
 
     <ImageButton
         android:id="@+id/d8"
@@ -69,21 +71,23 @@
         android:onClick="onClick"
         android:padding="0dp"
         android:scaleType="fitCenter"
+        android:background="@drawable/transparent_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/d6"
         app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/d10"
         app:layout_constraintVertical_bias="0.175"
-        app:srcCompat="@drawable/d8" />
+        app:srcCompat="@drawable/diced8" />
 
     <ImageButton
         android:id="@+id/d10"
         android:layout_width="103dp"
         android:layout_height="105dp"
-        android:layout_marginTop="296dp"
+        android:layout_marginTop="284dp"
         android:layout_weight="1"
         android:adjustViewBounds="true"
+        android:background="@drawable/transparent_background"
         android:contentDescription="@string/d10"
         android:onClick="onClick"
         android:padding="0dp"
@@ -92,15 +96,16 @@
         app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/d10" />
+        app:srcCompat="@drawable/diced10" />
 
     <ImageButton
         android:id="@+id/d12"
         android:layout_width="103dp"
         android:layout_height="105dp"
-        android:layout_marginTop="296dp"
+        android:layout_marginTop="284dp"
         android:layout_weight="1"
         android:adjustViewBounds="true"
+        android:background="@drawable/transparent_background"
         android:contentDescription="@string/d12"
         android:onClick="onClick"
         android:padding="0dp"
@@ -109,15 +114,16 @@
         app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toEndOf="@+id/d20"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/d12" />
+        app:srcCompat="@drawable/diced12" />
 
     <ImageButton
         android:id="@+id/d20"
         android:layout_width="103dp"
         android:layout_height="105dp"
-        android:layout_marginTop="296dp"
+        android:layout_marginTop="284dp"
         android:layout_weight="1"
         android:adjustViewBounds="true"
+        android:background="@drawable/transparent_background"
         android:contentDescription="@string/d20"
         android:onClick="onClick"
         android:padding="0dp"
@@ -125,7 +131,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/d20" />
+        app:srcCompat="@drawable/diced20" />
 
     <Button
         android:id="@+id/d100"
@@ -135,6 +141,7 @@
         android:textColor="@android:color/black"
         android:textSize="24sp"
         android:onClick="onClick"
+        android:background="@drawable/black_border"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -145,7 +152,7 @@
         android:layout_width="41dp"
         android:layout_height="43dp"
         android:layout_marginRight="8dp"
-        android:background="@android:color/white"
+        android:background="@drawable/black_border"
         android:ems="10"
         android:inputType="number"
         android:paddingTop="8dp"
@@ -164,7 +171,7 @@
         android:layout_width="41dp"
         android:layout_height="43dp"
         android:layout_marginLeft="8dp"
-        android:background="@android:color/white"
+        android:background="@drawable/black_border"
         android:ems="10"
         android:inputType="number"
         android:paddingTop="8dp"
@@ -183,7 +190,7 @@
         android:layout_width="41dp"
         android:layout_height="43dp"
         android:layout_marginRight="8dp"
-        android:text="+"
+        android:text="@string/plus"
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/numberDice"
         app:layout_constraintEnd_toStartOf="@+id/rollResult"
@@ -197,7 +204,7 @@
         android:layout_width="41dp"
         android:layout_height="43dp"
         android:layout_marginRight="8dp"
-        android:text="-"
+        android:text="@string/minus"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/rollResult"
@@ -211,7 +218,7 @@
         android:layout_width="41dp"
         android:layout_height="43dp"
         android:layout_marginLeft="8dp"
-        android:text="+"
+        android:text="@string/plus"
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/rollBonus"
         app:layout_constraintEnd_toEndOf="parent"
@@ -225,7 +232,7 @@
         android:layout_width="41dp"
         android:layout_height="43dp"
         android:layout_marginLeft="8dp"
-        android:text="-"
+        android:text="@string/minus"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

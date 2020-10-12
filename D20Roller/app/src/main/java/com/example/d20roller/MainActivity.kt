@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         // Find final result, considering number of dice and amount of bonus
         var dice = Dice(buttonValue)
-        var diceRoll = numDice * (dice.roll() + amountBonus)
+        var diceRoll = ((dice.roll() + amountBonus)*numDice)
 
         // Display final result to TextView
         rollResult.setText(diceRoll.toString())
