@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        // Run on startup
         selectDice()
         selectBonus()
     }
@@ -22,19 +22,25 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private fun selectDice() {
         // Default amount of dice is 1
         numberDice.setText("${numDice}d")
-
         // Govern increasing or decreasing the number of dice rolled
-        diceAdd.setOnClickListener{ numberDice.setText("${numDice++}d") }
-        diceSubtract.setOnClickListener{ numberDice.setText("${numDice--}d") }
+        diceAdd.setOnClickListener{
+            numDice++
+            numberDice.setText("${numDice}d") }
+        diceSubtract.setOnClickListener{
+            numDice--
+            numberDice.setText("${numDice--}d") }
     }
 
     private fun selectBonus() {
         // Default roll bonus is 0
         rollBonus.setText("${amountBonus}")
-
         // Govern the amount of bonus added to dice roll
-        bonusAdd.setOnClickListener{ rollBonus.setText("${amountBonus++}") }
-        bonusSubtract.setOnClickListener{ rollBonus.setText("${amountBonus--}") }
+        bonusAdd.setOnClickListener{
+            amountBonus++
+            rollBonus.setText("${amountBonus}") }
+        bonusSubtract.setOnClickListener{
+            amountBonus--
+            rollBonus.setText("${amountBonus}") }
     }
 
     override fun onClick(v: View?) {
@@ -48,14 +54,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.d20 -> 20
             else -> 100
         }
-
         // Find final result, considering number of dice and amount of bonus
         var dice = Dice(buttonValue)
         var diceRoll = ((dice.roll() + amountBonus)*numDice)
-
         // Display final result to TextView
         rollResult.setText(diceRoll.toString())
-
         // Pseudo code for sound file
         // if (dice.roll() == 20) { play "triumph" }
     }
