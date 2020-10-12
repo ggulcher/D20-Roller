@@ -6,9 +6,28 @@ import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
+
+    private var numDice = 1
+    private var amountBonus = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        selectDice()
+        selectBonus()
+    }
+
+    private fun selectDice() {
+        numberDice.setText("${numDice}d")
+        diceAdd.setOnClickListener{ numberDice.setText("${numDice++}d") }
+        diceSubtract.setOnClickListener{ numberDice.setText("${numDice--}d") }
+    }
+
+    private fun selectBonus() {
+        rollBonus.setText("${amountBonus}")
+        bonusAdd.setOnClickListener{ rollBonus.setText("${amountBonus++}") }
+        bonusSubtract.setOnClickListener{ rollBonus.setText("${amountBonus--}") }
     }
 
     override fun onClick(v: View?) {
@@ -18,14 +37,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.d8 -> 8
             R.id.d10 -> 10
             R.id.d12 -> 12
-            else -> 20
+            R.id.d20 -> 20
+            else -> 100
         }
 
         var dice = Dice(buttonValue)
-        var diceRoll = dice.roll()
+        var diceRoll = numDice * (dice.roll() + amountBonus)
 
         rollResult.setText(diceRoll.toString())
-
     }
 }
 

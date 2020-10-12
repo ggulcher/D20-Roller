@@ -9,9 +9,10 @@
 
     <TextView
         android:id="@+id/rollResult"
-        android:layout_width="348dp"
-        android:layout_height="211dp"
+        android:layout_width="217dp"
+        android:layout_height="219dp"
         android:background="@android:color/white"
+        android:padding="8dp"
         android:text="0"
         android:textAlignment="center"
         android:textColor="@android:color/black"
@@ -20,7 +21,8 @@
         app:layout_constraintBottom_toTopOf="@+id/d20"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.493" />
 
     <ImageButton
         android:id="@+id/d4"
@@ -34,8 +36,10 @@
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toEndOf="@+id/d6"
         app:layout_constraintTop_toBottomOf="@+id/d12"
+        app:layout_constraintVertical_bias="0.175"
         app:srcCompat="@drawable/d4" />
 
     <ImageButton
@@ -52,6 +56,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/d20"
+        app:layout_constraintVertical_bias="0.175"
         app:srcCompat="@drawable/d6" />
 
     <ImageButton
@@ -66,15 +71,17 @@
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/d6"
+        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/d10"
+        app:layout_constraintVertical_bias="0.175"
         app:srcCompat="@drawable/d8" />
 
     <ImageButton
         android:id="@+id/d10"
         android:layout_width="103dp"
         android:layout_height="105dp"
-        android:layout_marginTop="352dp"
+        android:layout_marginTop="296dp"
         android:layout_weight="1"
         android:adjustViewBounds="true"
         android:contentDescription="@string/d10"
@@ -91,7 +98,7 @@
         android:id="@+id/d12"
         android:layout_width="103dp"
         android:layout_height="105dp"
-        android:layout_marginTop="352dp"
+        android:layout_marginTop="296dp"
         android:layout_weight="1"
         android:adjustViewBounds="true"
         android:contentDescription="@string/d12"
@@ -108,7 +115,7 @@
         android:id="@+id/d20"
         android:layout_width="103dp"
         android:layout_height="105dp"
-        android:layout_marginTop="352dp"
+        android:layout_marginTop="296dp"
         android:layout_weight="1"
         android:adjustViewBounds="true"
         android:contentDescription="@string/d20"
@@ -119,5 +126,113 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/d20" />
-    
+
+    <Button
+        android:id="@+id/d100"
+        android:layout_width="268dp"
+        android:layout_height="53dp"
+        android:text="@string/d100"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        android:onClick="onClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/d6" />
+
+    <TextView
+        android:id="@+id/numberDice"
+        android:layout_width="41dp"
+        android:layout_height="43dp"
+        android:layout_marginRight="8dp"
+        android:background="@android:color/white"
+        android:ems="10"
+        android:inputType="number"
+        android:paddingTop="8dp"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/rollResult"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.225" />
+
+    <TextView
+        android:id="@+id/rollBonus"
+        android:layout_width="41dp"
+        android:layout_height="43dp"
+        android:layout_marginLeft="8dp"
+        android:background="@android:color/white"
+        android:ems="10"
+        android:inputType="number"
+        android:paddingTop="8dp"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/rollResult"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.225" />
+
+    <Button
+        android:id="@+id/diceAdd"
+        android:layout_width="41dp"
+        android:layout_height="43dp"
+        android:layout_marginRight="8dp"
+        android:text="+"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/numberDice"
+        app:layout_constraintEnd_toStartOf="@+id/rollResult"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/diceSubtract"
+        android:layout_width="41dp"
+        android:layout_height="43dp"
+        android:layout_marginRight="8dp"
+        android:text="-"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/rollResult"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numberDice"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/bonusAdd"
+        android:layout_width="41dp"
+        android:layout_height="43dp"
+        android:layout_marginLeft="8dp"
+        android:text="+"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/rollBonus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/rollResult"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/bonusSubtract"
+        android:layout_width="41dp"
+        android:layout_height="43dp"
+        android:layout_marginLeft="8dp"
+        android:text="-"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/rollResult"
+        app:layout_constraintTop_toBottomOf="@+id/rollBonus"
+        app:layout_constraintVertical_bias="0.0" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

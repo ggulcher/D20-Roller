@@ -6,4 +6,5 @@
     <string name="d10">10</string>
     <string name="d12">12</string>
     <string name="d20">20</string>
+    <string name="d100">100</string>
 </resources>
