@@ -7,6 +7,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
+    // Default values saved globally
     private var numDice = 1
     private var amountBonus = 0
 
@@ -19,18 +20,25 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun selectDice() {
+        // Default amount of dice is 1
         numberDice.setText("${numDice}d")
+
+        // Govern increasing or decreasing the number of dice rolled
         diceAdd.setOnClickListener{ numberDice.setText("${numDice++}d") }
         diceSubtract.setOnClickListener{ numberDice.setText("${numDice--}d") }
     }
 
     private fun selectBonus() {
+        // Default roll bonus is 0
         rollBonus.setText("${amountBonus}")
+
+        // Govern the amount of bonus added to dice roll
         bonusAdd.setOnClickListener{ rollBonus.setText("${amountBonus++}") }
         bonusSubtract.setOnClickListener{ rollBonus.setText("${amountBonus--}") }
     }
 
     override fun onClick(v: View?) {
+        // Used to determine size of num range for selecting a number
         var buttonValue = when (v?.id) {
             R.id.d4 -> 4
             R.id.d6 -> 6
@@ -41,13 +49,19 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             else -> 100
         }
 
+        // Find final result, considering number of dice and amount of bonus
         var dice = Dice(buttonValue)
         var diceRoll = numDice * (dice.roll() + amountBonus)
 
+        // Display final result to TextView
         rollResult.setText(diceRoll.toString())
+
+        // Pseudo code for sound file
+        // if (dice.roll() == 20) { play "triumph" }
     }
 }
 
+// Separate class for generation of random number used by all dice buttons
 class Dice(private var numSides: Int) {
     fun roll(): Int {
         return (1..numSides).random()
