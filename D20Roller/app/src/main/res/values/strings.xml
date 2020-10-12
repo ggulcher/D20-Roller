@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">D20 Roller</string>
+    <string name="d4">4</string>
+    <string name="d6">6</string>
+    <string name="d8">8</string>
+    <string name="d10">10</string>
+    <string name="d12">12</string>
+    <string name="d20">20</string>
+</resources>
