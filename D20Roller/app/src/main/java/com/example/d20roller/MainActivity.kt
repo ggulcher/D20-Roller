@@ -82,4 +82,3 @@ class Dice(private var numSides: Int) {
         return (1..numSides).random()
     }
 }
-
