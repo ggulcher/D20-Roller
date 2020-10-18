@@ -9,4 +9,11 @@
     <string name="d100">100</string>
     <string name="plus">+</string>
     <string name="minus">-</string>
+    <string name="defaultResult">0</string>
+    <string name="addDice">add dice</string>
+    <string name="totalDice">total dice</string>
+    <string name="subtractDice">subtract dice</string>
+    <string name="addBonus">add bonus</string>
+    <string name="totalBonus">total bonus</string>
+    <string name="subtractBonus">subtract bonus</string>
 </resources>

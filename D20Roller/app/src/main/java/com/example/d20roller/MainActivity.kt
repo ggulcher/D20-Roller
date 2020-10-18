@@ -22,11 +22,11 @@ open class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun selectDice() {
         numberDice.text = "${numDice}d"
-        diceAdd.setOnClickListener{
+        diceAdd.setOnClickListener {
             numDice++
             numberDice.text = "${numDice}d"
         }
-        diceSubtract.setOnClickListener{
+        diceSubtract.setOnClickListener {
             numDice--
             numberDice.text = "${numDice--}d"
         }
@@ -34,11 +34,11 @@ open class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun selectBonus() {
         rollBonus.text = "${amountBonus}"
-        bonusAdd.setOnClickListener{
+        bonusAdd.setOnClickListener {
             amountBonus++
             rollBonus.text = "${amountBonus}"
         }
-        bonusSubtract.setOnClickListener{
+        bonusSubtract.setOnClickListener {
             amountBonus--
             rollBonus.text = "${amountBonus}"
         }
@@ -65,7 +65,7 @@ open class MainActivity : AppCompatActivity(), View.OnClickListener {
             else -> 100
         }
         val dice = Dice(buttonValue)
-        val diceRoll = ((dice.roll() + amountBonus)*numDice)
+        val diceRoll = ((dice.roll() + amountBonus) * numDice)
 
         rollResult.text = diceRoll.toString()
         if (buttonValue == 20 && diceRoll == 20) {
