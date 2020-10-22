@@ -5,15 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/black"
-    android:padding="8dp"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/rollResult"
-        android:layout_width="378dp"
+        android:layout_width="match_parent"
         android:layout_height="218dp"
-        android:background="@drawable/black_border"
-        android:padding="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/border_bottom"
+        android:paddingTop="30dp"
         android:text="@string/defaultResult"
         android:textAlignment="center"
         android:textColor="@android:color/white"
@@ -21,10 +22,9 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.163" />
+        app:layout_constraintVertical_bias="0.208" />
 
     <ImageButton
         android:id="@+id/d20"
@@ -35,32 +35,14 @@
         android:background="@drawable/transparent_background"
         android:contentDescription="@string/d20"
         android:onClick="onClick"
-        android:padding="0dp"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/d12"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.573"
+        app:layout_constraintVertical_bias="0.702"
         app:srcCompat="@drawable/invertd20" />
-
-    <ImageButton
-        android:id="@+id/d10"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_weight="1"
-        android:adjustViewBounds="true"
-        android:background="@drawable/transparent_background"
-        android:contentDescription="@string/d10"
-        android:onClick="onClick"
-        android:padding="0dp"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.78"
-        app:srcCompat="@drawable/invertd10" />
 
     <ImageButton
         android:id="@+id/d8"
@@ -71,15 +53,32 @@
         android:background="@drawable/transparent_background"
         android:contentDescription="@string/d8"
         android:onClick="onClick"
-        android:padding="0dp"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.053"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/d10"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.575"
+        app:layout_constraintVertical_bias="0.702"
         app:srcCompat="@drawable/invertd8" />
+
+    <ImageButton
+        android:id="@+id/d10"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_weight="1"
+        android:adjustViewBounds="true"
+        android:background="@drawable/transparent_background"
+        android:contentDescription="@string/d10"
+        android:onClick="onClick"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/d8"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/d12"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.702"
+        app:srcCompat="@drawable/invertd10" />
 
     <ImageButton
         android:id="@+id/d4"
@@ -90,14 +89,13 @@
         android:background="@drawable/transparent_background"
         android:contentDescription="@string/d4"
         android:onClick="onClick"
-        android:padding="0dp"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.928"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/d100"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/d6"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.779"
+        app:layout_constraintVertical_bias="0.852"
         app:srcCompat="@drawable/invertd4" />
 
     <ImageButton
@@ -109,14 +107,13 @@
         android:background="@drawable/transparent_background"
         android:contentDescription="@string/d6"
         android:onClick="onClick"
-        android:padding="0dp"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.928"
+        app:layout_constraintEnd_toStartOf="@+id/d4"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.573"
+        app:layout_constraintVertical_bias="0.854"
         app:srcCompat="@drawable/invertd6" />
 
     <ImageButton
@@ -128,14 +125,13 @@
         android:background="@drawable/transparent_background"
         android:contentDescription="@string/d12"
         android:onClick="onClick"
-        android:padding="0dp"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.047"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/d10"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/d20"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.777"
+        app:layout_constraintVertical_bias="0.702"
         app:srcCompat="@drawable/invertd12" />
 
     <ImageButton
@@ -151,35 +147,18 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/d4"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.955"
+        app:layout_constraintVertical_bias="0.851"
         app:srcCompat="@drawable/invertpercent" />
 
-    <ImageButton
-        android:id="@+id/diceAdd"
-        android:layout_width="42dp"
-        android:layout_height="42dp"
-        android:background="@drawable/transparent_background"
-        android:contentDescription="@string/addDice"
-        android:scaleType="fitCenter"
-        android:text="@string/plus"
-        android:textAlignment="center"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.043"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias=".93"
-        app:srcCompat="@drawable/invertedplus" />
-
     <TextView
-        android:id="@+id/numberDice"
-        android:layout_width="42dp"
+        android:id="@+id/rollBonus"
+        android:layout_width="60dp"
         android:layout_height="42dp"
-        android:background="@drawable/black_border"
-        android:contentDescription="@string/totalDice"
+        android:background="@drawable/border_bottom"
+        android:contentDescription="@string/totalBonus"
         android:ems="10"
         android:inputType="number"
         android:paddingTop="8dp"
@@ -187,29 +166,11 @@
         android:textColor="@android:color/white"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.154"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/bonusAdd"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/bonusSubtract"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.93" />
-
-    <ImageButton
-        android:id="@+id/diceSubtract"
-        android:layout_width="42dp"
-        android:layout_height="42dp"
-        android:background="@drawable/transparent_background"
-        android:contentDescription="@string/subtractDice"
-        android:scaleType="fitCenter"
-        android:text="@string/minus"
-        android:textAlignment="center"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias=".267"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias=".93"
-        app:srcCompat="@drawable/invertedminus" />
+        app:layout_constraintVertical_bias="0.53" />
 
     <ImageButton
         android:id="@+id/bonusAdd"
@@ -223,18 +184,36 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.732"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/rollBonus"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.93"
+        app:layout_constraintVertical_bias="0.53"
+        app:srcCompat="@drawable/invertedplus" />
+
+    <ImageButton
+        android:id="@+id/diceAdd"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:background="@drawable/transparent_background"
+        android:contentDescription="@string/addDice"
+        android:scaleType="fitCenter"
+        android:text="@string/plus"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/bonusSubtract"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/numberDice"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.53"
         app:srcCompat="@drawable/invertedplus" />
 
     <TextView
-        android:id="@+id/rollBonus"
-        android:layout_width="42dp"
+        android:id="@+id/numberDice"
+        android:layout_width="60dp"
         android:layout_height="42dp"
-        android:background="@drawable/black_border"
-        android:contentDescription="@string/totalBonus"
+        android:background="@drawable/border_bottom"
+        android:contentDescription="@string/totalDice"
         android:ems="10"
         android:inputType="number"
         android:paddingTop="8dp"
@@ -242,11 +221,29 @@
         android:textColor="@android:color/white"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.843"
+        app:layout_constraintEnd_toStartOf="@+id/diceAdd"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/diceSubtract"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.53" />
+
+    <ImageButton
+        android:id="@+id/diceSubtract"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:background="@drawable/transparent_background"
+        android:contentDescription="@string/subtractDice"
+        android:scaleType="fitCenter"
+        android:text="@string/minus"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/numberDice"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.93" />
+        app:layout_constraintVertical_bias="0.53"
+        app:srcCompat="@drawable/invertedminus" />
 
     <ImageButton
         android:id="@+id/bonusSubtract"
@@ -259,11 +256,11 @@
         android:textAlignment="center"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.956"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/rollBonus"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/diceAdd"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias=".93"
+        app:layout_constraintVertical_bias="0.53"
         app:srcCompat="@drawable/invertedminus" />
 
 

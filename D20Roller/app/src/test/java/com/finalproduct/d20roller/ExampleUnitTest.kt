@@ -1,4 +1,4 @@
-package com.example.d20roller
+package com.finalproduct.d20roller
 
 import org.junit.Test
 
